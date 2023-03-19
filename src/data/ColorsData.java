@@ -5,8 +5,13 @@ public enum ColorsData {
     BLACK ("Черный"),
     FOXY ("Рыжий");
 
-   // private String colorName;
+    private String colorName;
 
     ColorsData(String colorName) {
+        this.colorName = colorName;
+    }
+
+    public String getColorName() {
+        return colorName;
     }
 }

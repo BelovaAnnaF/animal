@@ -38,7 +38,8 @@ public class Runner {
                     
                     animals.add(animal);
                 }
-                case LIST -> animals.forEach((AbsAnimal animal) -> System.out.println(animal.toString()));
+                case LIST -> animals.forEach((AbsAnimal animal) ->
+                        System.out.println(animal.toString()));
                 case EXIT -> System.exit(0);
 
             }
