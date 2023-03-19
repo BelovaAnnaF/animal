@@ -59,7 +59,7 @@ public class Runner {
         System.out.println("Введите вес животного");
         String weight = scanner.next();
         animal.setWeight(Integer.parseInt(weightStr));
-        //защита должно быть только число
+        //защита должно быть только число, больше нуля и меньше 100
 
         System.out.println("Введите цвет животного");
         String color = scanner.next();
