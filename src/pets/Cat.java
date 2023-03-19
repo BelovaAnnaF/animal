@@ -1,5 +1,9 @@
 package pets;
 
-import animals.AbsAnimals;
-public class Cat extends AbsAnimals{
+import animals.AbsAnimal;
+public class Cat extends AbsAnimal {
+    @Override
+    public void  say(){
+        System.out.println("Мяу!");
+    }
 }

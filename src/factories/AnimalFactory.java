@@ -1,13 +1,13 @@
 package factories;
 
-import animals.AbsAnimals;
+import animals.AbsAnimal;
 import birds.Duck;
 import data.AnimalTypeData;
 import pets.Cat;
 import pets.Dog;
 
 public class AnimalFactory {
-    public AbsAnimals create(AnimalTypeData animalTypeData) {
+    public AbsAnimal create(AnimalTypeData animalTypeData) {
         switch (animalTypeData) {
             case CAT -> {
                 return new Cat();
@@ -19,5 +19,7 @@ public class AnimalFactory {
                 return new Duck();
             }
         }
+
+        return null;
     }
 }

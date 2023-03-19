@@ -1,6 +1,6 @@
 package animals;
 
-public abstract class AbsAnimals {
+public abstract class AbsAnimal {
     private String name = "";
     private int age = -1;
     private int weight = -1;
@@ -58,24 +58,21 @@ public abstract class AbsAnimals {
     public String toString() {
         return String.format(
                 "Привет! меня зовут %s, мне %d %s, я вешу - %d кг, мой цвет - %s",
-                name, age, getYearPrefix(age), weight, color
+                name, age, getYearPrefix(age), weight, color //реализовать цвет из enum
         );
     }
 
     private String getYearPrefix(int age) {
-        int ostatok = age % 10;
+        int balance = age % 10;
 
-        if(ostatok >= 5 || ostatok == 0 || (age >= 11 && age < 15)) {
+        if (balance >= 5 || balance == 0 || (age >= 11 && age < 15)) {
             return "лет";
         }
 
-        if(ostatok == 1) {
+        if (balance == 1) {
             return "год";
         }
 
-        if(ostatok >=2) {
-            return "года";
-        }
-        return null;
+        return "года";
     }
 }
