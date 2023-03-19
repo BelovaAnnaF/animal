@@ -76,5 +76,6 @@ public abstract class AbsAnimals {
         if(ostatok >=2) {
             return "года";
         }
+        return null;
     }
 }
