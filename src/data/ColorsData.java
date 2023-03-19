@@ -10,7 +10,9 @@ public enum ColorsData {
     ColorsData(String colorName) {
         this.colorName = colorName;
     }
+    ColorsData() {
 
+    }
     public String getColorName() {
         return colorName;
     }
