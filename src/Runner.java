@@ -53,7 +53,7 @@ public class Runner {
 
         System.out.println("Введите возраст животного");
         String age = scanner.next();
-        animal.setAge(Integer.parseInt(ageStr));
+          animal.setAge(Integer.parseInt(ageStr));
         //защита должно быть  только число больше 0 и меньше 25
 
         System.out.println("Введите вес животного");
