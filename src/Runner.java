@@ -53,13 +53,18 @@ public class Runner {
 
         System.out.println("Введите возраст животного");
         String age = scanner.next();
-          animal.setAge(Integer.parseInt(ageStr));
+        int ageStr = Integer.parseInt(age);
+        animal.setAge(ageStr);
+        // animal.setAge(Integer.parseInt(String.valueOf(ageStr)));
         //защита должно быть  только число больше 0 и меньше 25
 
         System.out.println("Введите вес животного");
         String weight = scanner.next();
-        animal.setWeight(Integer.parseInt(weightStr));
+        int weightStr = Integer.parseInt(weight);
+        animal.setWeight(weightStr);
+        //animal.setWeight(Integer.parseInt(String.valueOf(weightStr)));
         //защита должно быть только число, больше нуля и меньше 100
+
 
         System.out.println("Введите цвет животного");
         String color = scanner.next();
