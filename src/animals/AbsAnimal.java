@@ -58,7 +58,7 @@ public abstract class AbsAnimal {
     public String toString() {
         return String.format(
                 "Привет! меня зовут %s, мне %d %s, я вешу - %d кг, мой цвет - %s",
-                name, age, getYearPrefix(age), weight, color //реализовать цвет из enum
+                name, age, getYearPrefix(age), weight, color
         );
     }
 

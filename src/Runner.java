@@ -33,9 +33,9 @@ public class Runner {
 
                     AnimalTypeData animalTypeData = AnimalTypeData.valueOf(animalTypeStr);
                     AnimalFactory animalFactory = new AnimalFactory();
-                    
+
                     AbsAnimal animal = fillAnimalsData(animalFactory.create(animalTypeData));
-                    
+
                     animals.add(animal);
                 }
                 case LIST -> animals.forEach((AbsAnimal animal) ->
@@ -53,17 +53,38 @@ public class Runner {
 
         System.out.println("Введите возраст животного");
         String age = scanner.next();
-        int ageStr = Integer.parseInt(age);
-        animal.setAge(ageStr);
-        // animal.setAge(Integer.parseInt(String.valueOf(ageStr)));
-        //защита должно быть  только число больше 0 и меньше 25
+//        int ageStr = Integer.parseInt(age);
+        try {
+            int ageStr = Integer.parseInt(age);
+            animal.setAge(ageStr);
+            if (ageStr < 0 | ageStr > 25){
+                System.out.println("Возраст может быть от 1 до 25");
+                System.out.println("Введите возраст животного");
+                age = scanner.next();
+            }
+
+        } catch (NumberFormatException ex) {
+            System.out.println("Возраст введен не верно");
+            System.out.println("Введите возраст животного");
+            age = scanner.next();
+        }
 
         System.out.println("Введите вес животного");
         String weight = scanner.next();
-        int weightStr = Integer.parseInt(weight);
-        animal.setWeight(weightStr);
-        //animal.setWeight(Integer.parseInt(String.valueOf(weightStr)));
-        //защита должно быть только число, больше нуля и меньше 100
+        try {
+            int weightStr = Integer.parseInt(weight);
+            animal.setAge(weightStr);
+            if (weightStr < 0 | weightStr > 100) {
+                System.out.println("Вес может быть от 1 до 100");
+                System.out.println("Введите вес животного");
+                weight = scanner.next();
+            }
+
+        } catch (NumberFormatException ex) {
+            System.out.println("Вес введен не верно");
+            System.out.println("Введите вес животного");
+            weight = scanner.next();
+        }
 
 
         System.out.println("Введите цвет животного");
