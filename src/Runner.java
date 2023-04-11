@@ -1,7 +1,10 @@
 import animals.AbsAnimal;
+import birds.Duck;
 import data.AnimalTypeData;
 import data.CommandsData;
 import factories.AnimalFactory;
+import pets.Cat;
+import pets.Dog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +40,18 @@ public class Runner {
                     AbsAnimal animal = fillAnimalsData(animalFactory.create(animalTypeData));
 
                     animals.add(animal);
+
+                    if (animal instanceof Cat){
+                        Cat cat = new Cat();
+                        cat.say();
+                    } else if (animal instanceof Dog){
+                        Dog dog = new Dog();
+                        dog.say();
+                    }else if (animal instanceof Duck){
+                        Duck duck = new Duck();
+                        duck.say();
+                        duck.fly();
+                    }
                 }
                 case LIST -> animals.forEach((AbsAnimal animal) ->
                         System.out.println(animal.toString()));

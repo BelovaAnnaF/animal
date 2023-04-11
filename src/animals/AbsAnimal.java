@@ -1,5 +1,9 @@
 package animals;
 
+import birds.Duck;
+import pets.Cat;
+import pets.Dog;
+
 public abstract class AbsAnimal {
     private String name = "";
     private int age = -1;
@@ -75,4 +79,5 @@ public abstract class AbsAnimal {
 
         return "года";
     }
+
 }
