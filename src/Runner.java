@@ -51,40 +51,25 @@ public class Runner {
         String name = scanner.next();
         animal.setName(name);
 
+
         System.out.println("Введите возраст животного");
         String age = scanner.next();
-//        int ageStr = Integer.parseInt(age);
-        try {
-            int ageStr = Integer.parseInt(age);
-            animal.setAge(ageStr);
-            if (ageStr < 0 | ageStr > 25){
-                System.out.println("Возраст может быть от 1 до 25");
-                System.out.println("Введите возраст животного");
-                age = scanner.next();
-            }
-
-        } catch (NumberFormatException ex) {
-            System.out.println("Возраст введен не верно");
+        while (!IntAge(age)){
+            System.out.println("Возраст введен не верно, возраст должен содержать цифры от 1 до 25");
             System.out.println("Введите возраст животного");
             age = scanner.next();
         }
+        animal.setAge(Integer.parseInt(age));
+
 
         System.out.println("Введите вес животного");
         String weight = scanner.next();
-        try {
-            int weightStr = Integer.parseInt(weight);
-            animal.setAge(weightStr);
-            if (weightStr < 0 | weightStr > 100) {
-                System.out.println("Вес может быть от 1 до 100");
-                System.out.println("Введите вес животного");
-                weight = scanner.next();
-            }
-
-        } catch (NumberFormatException ex) {
-            System.out.println("Вес введен не верно");
+        while (!IntWeight(weight)){
+            System.out.println("Вес введен не верно, вес должен содержать цифры от 1 до 100");
             System.out.println("Введите вес животного");
             weight = scanner.next();
         }
+        animal.setWeight(Integer.parseInt(weight));
 
 
         System.out.println("Введите цвет животного");
@@ -92,5 +77,26 @@ public class Runner {
         animal.setColor(color); //попробовать реализовать из enum
 
         return animal;
+    }
+
+    private static boolean IntAge(String age){
+
+        try {
+            int ageStr = Integer.parseInt(age);
+            return ageStr > 0 & ageStr < 26;
+
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+    }
+    private static boolean IntWeight(String weight){
+
+        try {
+            int weightStr = Integer.parseInt(weight);
+            return weightStr > 0 & weightStr < 101;
+
+        } catch (NumberFormatException ex) {
+            return false;
+        }
     }
 }
