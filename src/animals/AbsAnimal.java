@@ -1,14 +1,12 @@
 package animals;
 
-import birds.Duck;
-import pets.Cat;
-import pets.Dog;
+import data.ColorData;
 
 public abstract class AbsAnimal {
     private String name = "";
     private int age = -1;
     private int weight = -1;
-    private String color = "";
+    private ColorData color = null;
 
     public String getName(){
         return name;
@@ -23,7 +21,7 @@ public abstract class AbsAnimal {
     }
 
     public String getColor() {
-        return color;
+        return color.getColorName();
     }
 
     public void setName(String name) {
@@ -39,7 +37,7 @@ public abstract class AbsAnimal {
     }
 
     public void setColor(String color) {
-        this.color = color;
+        this.color = ColorData.valueOf(color);
     }
 
     public void  say(){
@@ -62,7 +60,7 @@ public abstract class AbsAnimal {
     public String toString() {
         return String.format(
                 "Привет! меня зовут %s, мне %d %s, я вешу - %d кг, мой цвет - %s",
-                name, age, getYearPrefix(age), weight, color
+                name, age, getYearPrefix(age), weight, color.getColorName()
         );
     }
 

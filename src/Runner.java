@@ -1,6 +1,7 @@
 import animals.AbsAnimal;
 import birds.Duck;
 import data.AnimalTypeData;
+import data.ColorData;
 import data.CommandsData;
 import factories.AnimalFactory;
 import pets.Cat;
@@ -86,10 +87,14 @@ public class Runner {
         }
         animal.setWeight(Integer.parseInt(weight));
 
+        String color = "";
+    do {
+        System.out.println("Введите цвет животного white/black/foxy");
+        color = scanner.next().toUpperCase().trim();
+    }while (!color.equals("WHITE") && !color.equals("BLACK") && !color.equals("FOXY"));
+        ColorData colorData = ColorData.valueOf(color);
+        animal.setColor(color);
 
-        System.out.println("Введите цвет животного");
-        String color = scanner.next();
-        animal.setColor(color); //попробовать реализовать из enum
 
         return animal;
     }
