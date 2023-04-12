@@ -6,7 +6,6 @@ import data.CommandsData;
 import factories.AnimalFactory;
 import pets.Cat;
 import pets.Dog;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

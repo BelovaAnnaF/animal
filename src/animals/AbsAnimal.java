@@ -1,5 +1,4 @@
 package animals;
-
 import data.ColorData;
 
 public abstract class AbsAnimal {
